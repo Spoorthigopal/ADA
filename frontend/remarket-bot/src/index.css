@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display&display=swap');
+
+@layer base {
+  :root {
+    --background: 36 33% 97%;
+    --foreground: 25 30% 12%;
+    --card: 38 30% 95%;
+    --card-foreground: 25 30% 12%;
+    --popover: 36 33% 97%;
+    --popover-foreground: 25 30% 12%;
+    --primary: 25 45% 28%;
+    --primary-foreground: 38 40% 96%;
+    --secondary: 33 25% 88%;
+    --secondary-foreground: 25 30% 18%;
+    --muted: 35 20% 92%;
+    --muted-foreground: 25 12% 50%;
+    --accent: 28 55% 45%;
+    --accent-foreground: 38 40% 96%;
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 33 20% 88%;
+    --input: 33 20% 88%;
+    --ring: 25 45% 28%;
+    --radius: 0.75rem;
+
+    --sidebar-background: 35 28% 94%;
+    --sidebar-foreground: 25 30% 18%;
+    --sidebar-primary: 25 45% 28%;
+    --sidebar-primary-foreground: 38 40% 96%;
+    --sidebar-accent: 33 25% 88%;
+    --sidebar-accent-foreground: 25 30% 18%;
+    --sidebar-border: 33 18% 85%;
+    --sidebar-ring: 25 45% 28%;
+
+    --success: 145 45% 40%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 90% 55%;
+    --warning-foreground: 25 30% 12%;
+    --info: 210 50% 50%;
+    --info-foreground: 0 0% 100%;
+
+    --caramel: 28 55% 45%;
+    --mocha: 20 35% 25%;
+    --sand: 38 35% 85%;
+    --oat: 40 25% 90%;
+    --ivory: 40 40% 97%;
+    --bronze: 30 40% 38%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'DM Sans', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'DM Serif Display', serif;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-sm border border-border/50 rounded-xl shadow-sm;
+  }
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300 hover:shadow-md hover:-translate-y-0.5;
+  }
+  .gradient-warm {
+    background: linear-gradient(135deg, hsl(var(--sand)) 0%, hsl(var(--oat)) 50%, hsl(var(--ivory)) 100%);
+  }
+  .gradient-accent {
+    background: linear-gradient(135deg, hsl(var(--caramel)) 0%, hsl(var(--bronze)) 100%);
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+  }
+}
